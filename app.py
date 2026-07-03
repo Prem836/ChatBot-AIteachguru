@@ -88,7 +88,7 @@ if user_input:
         
         # Send everything to Groq
         response = client.chat.completions.create(
-            model="llama3-8b-8192",
+            model="llama-3.3-70b-versatile",
             messages=st.session_state.messages,
             tools=tools,
             tool_choice="auto",
@@ -122,7 +122,7 @@ if user_input:
             
             # 4. The AI looks at the calculator result and generates a final response
             final_response = client.chat.completions.create(
-                model="llama3-8b-8192",
+                model="llama-3.3-70b-versatile",
                 messages=st.session_state.messages,
             )
             final_content = final_response.choices[0].message.content
